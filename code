@@ -1,0 +1,13 @@
+excitement = seq(0,10,10/24)
+excitement = excitement^2
+time = seq(1992,2016,1)
+data = data.frame(cbind(time, excitement))
+plot = ggplot(data, aes(x=time, y=excitement)) 
+      + geom_bar(stat="identity", fill="tan", color="skyblue2") 
+      + geom_text(aes(label = sprintf("%.1f%%", excitement)), vjust = -.5, size = 3) 
+      + xlab("A Lifetime") 
+      + ylab("My Excitement for Technology") 
+      + ggtitle("The Exponential Growth of Excitement") 
+      + scale_x_continuous(breaks=time) 
+      + theme_classic()
+print(plot)
